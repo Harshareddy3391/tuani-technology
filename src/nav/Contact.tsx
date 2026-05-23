@@ -40,7 +40,7 @@ function Contact() {
             <div className="card border-0 shadow-sm h-100">
               <div className="card-body">
                 <h5 className="card-title text-primary mb-3">📞 Phone</h5>
-                <p className="card-text">+1 (555) 123-4567</p>
+                <p className="card-text">+91 -  9663014160</p>
               </div>
             </div>
           </div>
@@ -48,7 +48,7 @@ function Contact() {
             <div className="card border-0 shadow-sm h-100">
               <div className="card-body">
                 <h5 className="card-title text-primary mb-3">📧 Email</h5>
-                <p className="card-text">info@tuantech.com</p>
+                <p className="card-text">tuani.swain@tuanitechnology.com</p>
               </div>
             </div>
           </div>
@@ -56,7 +56,9 @@ function Contact() {
             <div className="card border-0 shadow-sm h-100">
               <div className="card-body">
                 <h5 className="card-title text-primary mb-3">📍 Address</h5>
-                <p className="card-text">123 Tech Street, City, Country</p>
+                <p className="card-text">TUANI TECHNOLOGY 
+GURAPPA READY LANE , ANNASANDRAPALYA,
+BANGALORE - 560017</p>
               </div>
             </div>
           </div>
