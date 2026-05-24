@@ -74,3 +74,11 @@ body {
 .bg-gradient {
   background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
 }
+
+.hover-link {
+  transition: color 0.3s ease;
+}
+
+.hover-link:hover {
+  color: var(--primary-color) !important;
+}

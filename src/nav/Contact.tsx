@@ -64,6 +64,25 @@ BANGALORE - 560017</p>
           </div>
         </div>
 
+        <div className="row mt-5 mb-5">
+          <div className="col-lg-12">
+            <div className="card border-0 shadow-sm">
+              <div className="card-body p-0">
+                <iframe 
+                  src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d374.0060360246279!2d77.674272!3d12.962638!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sen!2sin!4v1779578267152!5m2!1sen!2sin" 
+                  width="100%" 
+                  height="450" 
+                  style={{ border: 0 }} 
+                  
+                  loading="lazy" 
+                  referrerPolicy="no-referrer-when-downgrade"
+                  className="rounded-top"
+                ></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <div className="row mt-5">
           <div className="col-lg-8 mx-auto">
             <div className="card border-0 shadow-sm">

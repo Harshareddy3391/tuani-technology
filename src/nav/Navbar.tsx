@@ -13,10 +13,11 @@ function Navbar({ onNavClick }: NavbarProps) {
   }
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
+    <nav className="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm sticky-top">
       <div className="container-fluid">
-        <a className="navbar-brand fw-bold" href="#" onClick={() => handleNavClick('home')}>
-          <span className="text-primary">Tuani</span> Technology
+        <a className="navbar-brand fw-bold d-flex align-items-center" href="#" onClick={() => handleNavClick('home')}>
+          <img src="/logo.png" alt="Tuani Technology Logo" height="40" className="me-2" />
+          <span><span className="text-primary">Tuani</span> Technology</span>
         </a>
         <button
           className="navbar-toggler"

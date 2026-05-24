@@ -4,6 +4,7 @@ import Home from './nav/Home'
 import About from './nav/About'
 import Services from './nav/Services'
 import Contact from './nav/Contact'
+import Footer from './nav/Footer'
 import './App.css'
 
 function App() {
@@ -29,12 +30,7 @@ function App() {
       <main className="flex-grow-1">
         {renderPage()}
       </main>
-      <footer className="bg-dark text-white text-center py-4 mt-5">
-        <div className="container">
-          <p className="mb-1">&copy; 2026 Tuani Technology. All rights reserved.</p>
-          <p className="small text-muted">Built with React + Vite + Bootstrap</p>
-        </div>
-      </footer>
+      <Footer onNavClick={setCurrentPage} />
     </div>
   )
 }
