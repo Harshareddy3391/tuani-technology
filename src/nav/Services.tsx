@@ -5,7 +5,7 @@ import image8 from '../assets/image8.png'
 function Services() {
   const promotionalCards = [
     {
-      title: '',
+      title: 'Development',
       subtitle: ' ',
       features: [ ],
       image: image0,
@@ -13,7 +13,7 @@ function Services() {
       icon: '💼'
     },
     {
-      title: ' ',
+      title: 'Consulting',
       subtitle: ' ',
       tagline: ' ',
       features: [''],
@@ -22,7 +22,7 @@ function Services() {
       icon: '🤖'
     },
     {
-      title: ' ',
+      title: 'Outsourcing',
       subtitle: ' ',
       features: [''],
       image: image8,
@@ -54,104 +54,131 @@ function Services() {
             </h1>
           </div>
         </div>
+{/* Service Cards */}
+<div className="row g-4 mb-5">
+  {promotionalCards.map((card, index) => (
+    <div key={index} className="col-lg-4 mb-4">
 
-        {/* Service Cards */}
-        <div className="row g-4 mb-5">
-          {promotionalCards.map((card, index) => (
-            <div key={index} className="col-lg-4 mb-4">
-              <div 
-                className="h-100 rounded-3 text-white overflow-hidden" 
-                style={{ 
-                  backgroundImage: `url(${card.image})`,
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center',
-                  border: `2px solid ${card.accentColor}40`,
-                  transition: 'all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
-                  position: 'relative',
-                  cursor: 'pointer',
-                  boxShadow: `0 10px 40px ${card.accentColor}20`,
-                  display: 'flex',
-                  flexDirection: 'column',
-                  minHeight: '450px',
-                  justifyContent: 'flex-end'
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.transform = 'translateY(-15px) scale(1.02)';
-                  e.currentTarget.style.boxShadow = `0 25px 60px ${card.accentColor}60`;
-                  e.currentTarget.style.borderColor = `${card.accentColor}80`;
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.transform = 'translateY(0) scale(1)';
-                  e.currentTarget.style.boxShadow = `0 10px 40px ${card.accentColor}20`;
-                  e.currentTarget.style.borderColor = `${card.accentColor}40`;
-                }}
-              >
+      {/* Title */}
+      <h2
+        className="service-title fw-bold text-center text-uppercase fs-2 fs-md-1 mb-3 text-white px-2"
+        style={{
+          
+          lineHeight: '1.3',
+          transition: 'all 0.4s ease'
+        }}
+      >
+        {card.title}
+      </h2>
+
+      {/* Card */}
+      <div
+        className="service-card h-100 rounded-3 text-white overflow-hidden"
+        style={{
+          backgroundImage: `url(${card.image})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          border: `2px solid ${card.accentColor}40`,
+          transition: 'all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
+          position: 'relative',
+          cursor: 'pointer',
+          boxShadow: `0 10px 40px ${card.accentColor}20`,
+          display: 'flex',
+          flexDirection: 'column',
+          minHeight: '450px',
+          justifyContent: 'flex-end'
+        }}
+
+        onMouseEnter={(e) => {
+
+          /* Card Effects */
+          e.currentTarget.style.transform =
+            'translateY(-15px) scale(1.02)'
+
+          e.currentTarget.style.boxShadow =
+            `0 25px 60px ${card.accentColor}60`
+
+          e.currentTarget.style.borderColor =
+            `${card.accentColor}80`
+
+          /* Title Effects */
+          const title =
+            e.currentTarget.parentElement?.querySelector(
+              '.service-title'
+            ) as HTMLElement
+
+          if (title) {
+            title.style.transform =
+              'translateY(-8px) scale(1.08)'
+
+            title.style.textShadow =
+              `0 0 35px ${card.accentColor}`
+
+            title.style.color =
+              card.accentColor
+
+            title.style.letterSpacing =
+              '2px'
+          }
+        }}
+
+        onMouseLeave={(e) => {
+
+          /* Card Reset */
+          e.currentTarget.style.transform =
+            'translateY(0) scale(1)'
+
+          e.currentTarget.style.boxShadow =
+            `0 10px 40px ${card.accentColor}20`
+
+          e.currentTarget.style.borderColor =
+            `${card.accentColor}40`
+
+          /* Title Reset */
+          const title =
+            e.currentTarget.parentElement?.querySelector(
+              '.service-title'
+            ) as HTMLElement
+
+          if (title) {
+            title.style.transform =
+              'translateY(0) scale(1)'
+
+            title.style.textShadow =
+              `0 0 15px ${card.accentColor}`
+
+            title.style.color =
+              'white'
+
+            title.style.letterSpacing =
+              '0px'
+          }
+        }}
+      >
+
+        {/* Overlay */}
+        <div
+          style={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            background:
+              'linear-gradient(to top, rgba(0,0,0,0.12), rgba(0,0,0,0.02))',
+            zIndex: 1,
+            pointerEvents: 'none'
+          }}
+        ></div>
+
+      </div>
+    </div>
+  ))}
+</div>
+                 
                 {/* Dark overlay for better text readability */}
-                <div style={{
-                  position: 'absolute',
-                  top: 0,
-                  left: 0,
-                  right: 0,
-                  bottom: 0,
-                  background: 'linear-gradient(to bottom, rgba(10, 14, 39, 0.2), rgba(10, 14, 39, 0.85))',
-                  zIndex: 1,
-                  pointerEvents: 'none'
-                }}></div>
-
-                {/* Content Section - Overlaid on image */}
-                <div className="p-4" style={{ position: 'relative', zIndex: 2 }}>
-                  {/* Title */}
-                  <h3 className="fw-bold mb-2" style={{ fontSize: '1.3rem' }}>
-                    {card.title}
-                  </h3>
-
-                  {/* Subtitle */}
-                  <p className="fw-bold mb-3" style={{ color: card.accentColor, fontSize: '0.9rem' }}>
-                    {card.subtitle}
-                  </p>
-
-                  {/* Tagline if exists */}
-                  {card.tagline && (
-                    <p className="mb-3" style={{ fontSize: '0.85rem', opacity: 0.9 }}>
-                      {card.tagline}
-                    </p>
-                  )}
-
-                  {/* Features */}
-                  <div className="d-flex flex-column gap-2 mb-3">
-                    {card.features.map((feature, idx) => (
-                      <div key={idx} className="d-flex align-items-start gap-2">
-                        <div 
-                          style={{
-                            width: '6px',
-                            height: '6px',
-                            borderRadius: '50%',
-                            background: card.accentColor,
-                            marginTop: '6px',
-                            flexShrink: 0
-                          }}
-                        ></div>
-                        <span style={{ fontSize: '0.85rem' }}>{feature}</span>
-                      </div>
-                    ))}
-                  </div>
-
-                  {/* Website */}
-                  <div 
-                    style={{
-                      paddingTop: '12px',
-                      borderTop: `1px solid ${card.accentColor}40`,
-                      fontSize: '0.8rem'
-                    }}
-                  >
-                    <span>www.tuani </span>
-                    <span style={{ color: card.accentColor, fontWeight: 'bold' }}>technology.com</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
+                 
+            
 
         {/* CSS Animations */}
         <style>{`
